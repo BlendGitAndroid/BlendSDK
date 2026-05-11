@@ -1,0 +1,6 @@
+framework module MyVideoService {
+  umbrella header "MyVideoService.h"
+  export *
+
+  module * { export * }
+}
