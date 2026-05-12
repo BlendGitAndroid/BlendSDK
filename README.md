@@ -31,27 +31,14 @@ pod install
 3. 设置为 `Do Not Embed`（静态库不需要嵌入）
 4. 手动添加依赖：[SDWebImage](https://github.com/SDWebImage/SDWebImage)、[IQKeyboardManager](https://github.com/hackiftekhar/IQKeyboardManager)
 
-## 模块说明
+## 功能特性
 
-BlendSDK 由 5 个内部模块合并为单一 framework 发布：
-
-| 模块 | 说明 |
-|------|------|
-| **MySDK** | 核心模块，提供 SDK 入口类 `MyGreeter`，包含版本查询、会话创建、消息发送等基础能力 |
-| **MyBiz** | 业务 UI 层，提供完整的聊天界面 `MySessionViewController`，包含消息列表、输入面板、更多面板等 |
-| **MyIMLib** | IM 通信层，负责底层即时通讯连接 |
-| **MyAWSService** | 云存储服务，提供文件上传能力（`MyCloudStorage`） |
-| **MyVideoService** | 视频通话服务，通过 Category 扩展为 `MyGreeter` 添加视频通话能力 |
-
-### 架构依赖关系
-
-```
-MyVideoService ──> MySDK <── MyBiz
-                              │
-                           MyIMLib
-                              │
-                        MyAWSService
-```
+- 完整的聊天会话界面
+- 文本/图片/视频消息支持
+- 机器人与人工客服切换
+- 视频通话能力
+- 云存储文件上传
+- 客户满意度评价
 
 ## 快速开始
 
