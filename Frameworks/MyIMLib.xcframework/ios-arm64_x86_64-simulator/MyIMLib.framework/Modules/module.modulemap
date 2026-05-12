@@ -1,6 +1,0 @@
-framework module MyIMLib {
-  umbrella header "MyIMLib.h"
-  export *
-
-  module * { export * }
-}

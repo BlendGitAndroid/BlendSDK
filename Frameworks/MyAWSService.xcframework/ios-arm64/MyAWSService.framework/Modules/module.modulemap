@@ -1,6 +1,0 @@
-framework module MyAWSService {
-  umbrella header "MyAWSService.h"
-  export *
-
-  module * { export * }
-}

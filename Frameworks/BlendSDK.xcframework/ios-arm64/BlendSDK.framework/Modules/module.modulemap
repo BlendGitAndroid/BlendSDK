@@ -1,0 +1,5 @@
+framework module BlendSDK {
+  umbrella header "BlendSDK.h"
+  export *
+  module * { export * }
+}
