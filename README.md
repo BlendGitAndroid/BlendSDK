@@ -1,6 +1,8 @@
 # BlendSDK
 
-BlendSDK 是一个模块化的 iOS 客服 SDK，提供即时通讯、消息管理、视频通话、云存储等能力。采用二进制分发（闭源），支持真机（arm64）和模拟器（arm64 + x86_64）。
+BlendSDK 是一个**演示用的** iOS 客服 SDK Demo，用于展示 iOS SDK 的架构设计、模块化开发、二进制打包和 CocoaPods 发布的完整流程。
+
+> **注意：本项目仅为学习演示用途，不涉及真实的网络请求和后端服务，所有数据均为本地模拟。**
 
 ## 环境要求
 
@@ -31,14 +33,15 @@ pod install
 3. 设置为 `Do Not Embed`（静态库不需要嵌入）
 4. 手动添加依赖：[SDWebImage](https://github.com/SDWebImage/SDWebImage)、[IQKeyboardManager](https://github.com/hackiftekhar/IQKeyboardManager)
 
-## 功能特性
+## 功能演示
 
-- 完整的聊天会话界面
-- 文本/图片/视频消息支持
-- 机器人与人工客服切换
-- 视频通话能力
-- 云存储文件上传
-- 客户满意度评价
+本 SDK 模拟了以下客服场景（均为本地模拟，无真实网络请求）：
+
+- 聊天会话界面（消息列表 + 输入面板）
+- 文本/图片/视频消息展示
+- 模拟机器人与人工客服切换
+- 模拟视频通话流程
+- 模拟云存储文件上传
 
 ## 快速开始
 
