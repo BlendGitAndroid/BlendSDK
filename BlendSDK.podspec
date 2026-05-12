@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'BlendSDK'
-  s.version      = '1.1.0'
+  s.version      = '1.1.1'
   s.summary      = 'A modular customer service SDK for iOS (binary distribution).'
   s.description  = <<-DESC
     BlendSDK is a modular customer service SDK that provides:
