@@ -15,7 +15,7 @@ BlendSDK 是一个模块化的 iOS 客服 SDK，提供即时通讯、消息管�
 在 `Podfile` 中添加：
 
 ```ruby
-pod 'BlendSDK', '~> 1.0.0'
+pod 'BlendSDK', '~> 1.1.0'
 ```
 
 然后执行：
@@ -26,14 +26,14 @@ pod install
 
 ### 手动集成
 
-1. 下载本仓库 `Frameworks/` 目录下的所有 `.xcframework`
+1. 下载本仓库 `Frameworks/BlendSDK.xcframework`
 2. 拖入 Xcode 项目的 `Frameworks, Libraries, and Embedded Content`
-3. 设置为 `Embed & Sign`
+3. 设置为 `Do Not Embed`（静态库不需要嵌入）
 4. 手动添加依赖：[SDWebImage](https://github.com/SDWebImage/SDWebImage)、[IQKeyboardManager](https://github.com/hackiftekhar/IQKeyboardManager)
 
 ## 模块说明
 
-BlendSDK 由 5 个模块组成：
+BlendSDK 由 5 个内部模块合并为单一 framework 发布：
 
 | 模块 | 说明 |
 |------|------|
@@ -55,27 +55,40 @@ MyVideoService ──> MySDK <── MyBiz
 
 ## 快速开始
 
-### 1. 获取 SDK 版本
+所有模块统一使用 `#import <BlendSDK/...>` 引入：
+
+### 1. 导入 SDK
 
 ```objc
-#import <MySDK/MyGreeter.h>
+// 导入全部头文件（推荐）
+#import <BlendSDK/BlendSDK.h>
+
+// 或者按需导入单个头文件
+#import <BlendSDK/MyGreeter.h>
+#import <BlendSDK/MySessionViewController.h>
+```
+
+### 2. 获取 SDK 版本
+
+```objc
+#import <BlendSDK/MyGreeter.h>
 
 NSString *version = [MyGreeter sdkVersion];
 NSLog(@"BlendSDK Version: %@", version);
 ```
 
-### 2. 创建会话
+### 3. 创建会话
 
 ```objc
 MyGreeter *greeter = [[MyGreeter alloc] init];
 NSString *session = [greeter startSessionWithUserId:@"user_123"];
 ```
 
-### 3. 使用聊天界面
+### 4. 使用聊天界面
 
 ```objc
-#import <MyBiz/MySessionViewController.h>
-#import <MyBiz/MyMessageSendingDelegate.h>
+#import <BlendSDK/MySessionViewController.h>
+#import <BlendSDK/MyMessageSendingDelegate.h>
 
 // 创建聊天控制器
 MySessionViewController *chatVC = [[MySessionViewController alloc] init];
@@ -86,7 +99,7 @@ chatVC.sendingDelegate = self; // 实现 MyMessageSendingDelegate 协议
 [self.navigationController pushViewController:chatVC animated:YES];
 ```
 
-### 4. 实现消息发送代理
+### 5. 实现消息发送代理
 
 ```objc
 // 遵守协议
@@ -103,7 +116,7 @@ chatVC.sendingDelegate = self; // 实现 MyMessageSendingDelegate 协议
 }
 ```
 
-### 5. 接收消息
+### 6. 接收消息
 
 ```objc
 // 当收到新消息时，调用此方法展示到聊天界面
@@ -111,10 +124,10 @@ MyMessage *incomingMsg = /* 从服务端收到的消息 */;
 [chatVC receiveMessage:incomingMsg];
 ```
 
-### 6. 视频通话（可选模块）
+### 7. 视频通话
 
 ```objc
-#import <MyVideoService/MyGreeter+MyGreeter_Video.h>
+#import <BlendSDK/MyGreeter+MyGreeter_Video.h>
 
 MyGreeter *greeter = [[MyGreeter alloc] init];
 [greeter startVideoCallWithSessionId:@"session_001"];
@@ -122,10 +135,10 @@ MyGreeter *greeter = [[MyGreeter alloc] init];
 [greeter hangUpVideo];
 ```
 
-### 7. 云存储上传（可选模块）
+### 8. 云存储上传
 
 ```objc
-#import <MyAWSService/MyCloudStorage.h>
+#import <BlendSDK/MyCloudStorage.h>
 
 MyCloudStorage *storage = [[MyCloudStorage alloc] init];
 // 使用 storage 进行文件上传
@@ -165,6 +178,7 @@ MyCloudStorage *storage = [[MyCloudStorage alloc] init];
 
 | 版本 | 日期 | 说明 |
 |------|------|------|
+| 1.1.0 | 2025-05-12 | 合并为单一 xcframework (静态库), 优化集成体验 |
 | 1.0.0 | 2025-05-11 | 首次发布，包含完整的客服 SDK 功能 |
 
 ## 许可证
