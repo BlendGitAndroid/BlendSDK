@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'BlendSDK'
-  s.version      = '1.1.2'
+  s.version      = '1.2.0'
   s.summary      = 'A modular customer service SDK for iOS (binary distribution).'
   s.description  = <<-DESC
     BlendSDK is a modular customer service SDK that provides:
@@ -26,6 +26,9 @@ Pod::Spec.new do |s|
 
   # 静态库需要声明
   s.static_framework = true
+
+  # 系统框架依赖 (静态库链接时需要)
+  s.frameworks = 'UIKit', 'Foundation', 'AVFoundation'
 
   # 第三方依赖
   s.dependency 'SDWebImage', '~> 5.0'
