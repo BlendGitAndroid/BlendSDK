@@ -21,21 +21,13 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '13.0'
   s.requires_arc = true
 
-  # 二进制分发：包含所有 xcframework
-  s.vendored_frameworks = [
-    'Frameworks/MySDK.xcframework',
-    'Frameworks/MyBiz.xcframework',
-    'Frameworks/MyIMLib.xcframework',
-    'Frameworks/MyAWSService.xcframework',
-    'Frameworks/MyVideoService.xcframework'
-  ]
+  # 二进制分发：单一 xcframework (包含所有模块)
+  s.vendored_frameworks = 'Frameworks/BlendSDK.xcframework'
+
+  # 静态库需要声明
+  s.static_framework = true
 
   # 第三方依赖
   s.dependency 'SDWebImage', '~> 5.0'
   s.dependency 'IQKeyboardManager'
-
-  # Framework 搜索路径
-  s.pod_target_xcconfig = {
-    'FRAMEWORK_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}/BlendSDK/Frameworks"'
-  }
 end
