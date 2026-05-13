@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'BlendSDK'
-  s.version      = '1.2.0'
+  s.version      = '3.0.0'
   s.summary      = 'An iOS SDK demo for learning SDK development, packaging and distribution.'
   s.description  = <<-DESC
     BlendSDK is a demo SDK for learning iOS SDK development workflows.

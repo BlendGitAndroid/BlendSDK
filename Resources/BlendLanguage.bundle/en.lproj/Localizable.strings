@@ -1,0 +1,9 @@
+/* BlendSDK English strings (示例) */
+
+"blend.welcome"         = "Welcome to BlendSDK";
+"blend.send"            = "Send";
+"blend.cancel"          = "Cancel";
+"blend.connecting"      = "Connecting…";
+"blend.connect_failed"  = "Connection failed, retrying";
+"blend.message.image"   = "[Image]";
+"blend.message.video"   = "[Video]";

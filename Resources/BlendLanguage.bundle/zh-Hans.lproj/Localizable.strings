@@ -1,0 +1,9 @@
+/* BlendSDK 简体中文 (示例) */
+
+"blend.welcome"         = "欢迎使用 BlendSDK";
+"blend.send"            = "发送";
+"blend.cancel"          = "取消";
+"blend.connecting"      = "连接中…";
+"blend.connect_failed"  = "连接失败,重试中";
+"blend.message.image"   = "[图片]";
+"blend.message.video"   = "[视频]";

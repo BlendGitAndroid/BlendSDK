@@ -1,0 +1,6 @@
+framework module MyBiz {
+  umbrella header "MyBiz.h"
+  export *
+
+  module * { export * }
+}

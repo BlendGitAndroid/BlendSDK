@@ -1,0 +1,19 @@
+{
+  "sdk_name": "BlendSDK",
+  "sdk_version": "2.0.0",
+  "endpoints": {
+    "im_server_cn":  "wss://im.cn.blend.example/ws",
+    "im_server_oversea": "wss://im.oversea.blend.example/ws",
+    "upload_cn":     "https://upload.cn.blend.example",
+    "upload_oversea":"https://upload.oversea.blend.example"
+  },
+  "feature_flags": {
+    "enable_video_call": true,
+    "enable_image_compress": true,
+    "max_message_length": 2000
+  },
+  "ui": {
+    "primary_color_hex": "#4285F4",
+    "bubble_max_width_ratio": 0.72
+  }
+}
